@@ -6,17 +6,24 @@
 
 :root {
   font-size: clamp(40%, 1% + 2vw, 100%);
-  --input-border: #bbd2ec;
-  --input-focus-hover-color: #697b8e;
+  --primary-color: #bbd2ec;
+  --secondary-color-before: #bbc3ed;
+  --secondary-color-before-bold: #8389a9;
+  --secondary-color-after: #bbede8;
+  --tertiary-color-before: #bbe2ed;
+  --tertiary-color-after: #c4bbed;
+  /* --input-focus-hover-color: #697b8e;
+  --link-color: #336090;
+  --link-focus-hover-color: #1e3b5a; */
 }
 
 body {
+  background-color: #bbd2ec;
   min-height: 100vh;
-
   display: grid;
-  grid-template-columns: 1fr;
   grid-template-rows: max-content 1fr max-content;
   gap: 2rem;
+  align-content: start;
 }
 
 body,
@@ -41,7 +48,7 @@ img {
 /* HEADER */
 
 header {
-  background-color: var(--input-border);
+  background-color: white;
   padding: 1rem 0;
 }
 
@@ -52,8 +59,7 @@ header .page {
 }
 
 .logo {
-  font-size: 2rem;
-  font-weight: bold;
+  max-width: 30px;
 }
 
 ul {
@@ -64,6 +70,14 @@ ul {
 
 a {
   text-decoration: none;
+  color: var(--secondary-color-before);
+  transition: all 0.2s;
+}
+
+a:hover,
+a:focus {
+  font-weight: bold;
+  color: var(--secondary-color-before-bold);
 }
 
 /* FORM */
@@ -73,12 +87,16 @@ a {
   gap: 1.5rem;
   width: 50%;
 
+  background-color: #ffff;
   border: 1px solid black;
   border-radius: 1rem;
+  box-shadow: 0px 4px rgba(0, 0, 0, 0.25);
 }
 
 .page.form img {
-  border-radius: 1rem 1rem 0 0;
+  width: 100%;
+  max-height: 300px;
+  border-radius: 0.9rem 0.9rem 0 0;
 }
 
 h1 {
@@ -102,13 +120,18 @@ form {
 }
 
 .input {
-  border: 1px solid var(--input-border);
+  border: 1px solid var(--primary-color);
   border-radius: 0.5rem;
-  padding: 0.5rem;
 
   display: flex;
   gap: 0.5rem;
   align-items: center;
+}
+
+.input .icon {
+  padding: 0.5rem;
+  border-radius: 0.3rem 0 0 0.3rem;
+  background-color: var(--primary-color);
 }
 
 .input img {
@@ -128,26 +151,37 @@ input {
 
 input::placeholder {
   font-size: 1rem;
-  color: var(--input-border);
+  color: var(--primary-color);
 }
 
 .input:focus-within,
 .input:hover {
-  outline: 2px solid var(--input-focus-hover-color);
+  outline: 2px solid var(--secondary-color-before);
+}
+
+.input:focus-within > .icon,
+.input:hover > .icon {
+  background-color: var(--secondary-color-before);
 }
 
 button {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+
   padding: 0.5rem 4rem;
   align-self: center;
-  background-color: var(--input-border);
+  background-color: var(--primary-color);
   border: none;
   border-radius: 0.25rem;
+
+  margin-top: 1.5rem;
 }
 
 button:focus,
 button:hover {
-  background-color: var(--input-focus-hover-color);
-  border: 1px solid var(--input-border);
+  background-color: var(--secondary-color-before);
+  border: 1px solid var(--primary-color);
 }
 
 .link-diferente {
@@ -156,12 +190,13 @@ button:hover {
   font-size: 0.75rem;
   align-self: center;
 
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 /* FOOTER */
 footer {
-  background-color: var(--input-border);
+  align-self: end;
+  background-color: white;
   text-align: center;
   padding: 1rem;
 }

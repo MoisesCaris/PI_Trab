@@ -7,3 +7,7 @@
 ## Tecnologias Utilizadas
 - HTML, CSS, JS e NodeJS (WEB)
 - FLUTTER (mobile)
+
+
+## TODO
+- Alterar o ícone do site para algo que não seja preto (motivos óbios apontados pelo Gus)

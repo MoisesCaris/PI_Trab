@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta charset="UTF-8" />
+  <meta name="description" content="Entre ou registre-se no nosso sistema" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/public/cardiogram.png" type="image/x-png" />
+  <title>PI- Saúde</title>
+  <link rel="stylesheet" href="/public/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet" />
+
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+  <header>
+    <div class="page">
+      <div class="logo">
+        <img src="/public/cardiogram.png" alt="A logo da nossa empresa" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="page">
+      <div class="container-left">
+        <div class="form" id="login">
+          <div class="login-image">
+            <img src="/public/login.svg" alt="Ilustração indicando login" />
+          </div>
+          <h1>Bem-vindo de volta</h1>
+          <span>É uma <span>honra</span> estar com você</span>
+          <form action="/login" method="post">
+            <div class="input-wrapper">
+              <label for="login-user-cpf">CPF</label>
+              <div class="input">
+                <div class="icon">
+                  <i class="ph ph-identification-card"></i>
+                </div>
+                <input type="text" id="login-user-cpf" placeholder="Digite seu CPF" name="cpf" />
+              </div>
+            </div>
+            <div class="input-wrapper">
+              <label for="login-user-password">Senha</label>
+              <div class="input">
+                <div class="icon">
+                  <i class="ph ph-lock"></i>
+                </div>
+                <input type="password" id="user-password" placeholder="Digite sua senha" name="pass" />
+              </div>
+            </div>
+            <button type="submit">Entre</button>
+          </form>
+        </div>
+      </div>
+      <div class="container-right">
+        <div class="form closed" id="sign-up">
+          <div class="sign-up-image">
+            <img src="/public/sign-up.svg" alt="Ilustração indicando sign-up" />
+          </div>
+          <h1>Seja bem vindo!</h1>
+          <span>Crie uma conta e
+            <span>compartilhe sua jornada</span> conosco!</span>
+          <form>
+            <div class="input-wrapper">
+              <label for="user-cpf">CPF</label>
+              <div class="input">
+                <div class="icon">
+                  <i class="ph ph-identification-card"></i>
+                </div>
+                <input type="text" id="user-cpf" placeholder="Digite seu CPF" />
+              </div>
+            </div>
+            <div class="input-wrapper">
+              <label for="user-password">Senha</label>
+              <div class="input">
+                <div class="icon">
+                  <i class="ph ph-lock"></i>
+                </div>
+                <input type="password" id="user-password" placeholder="Digite sua senha" />
+              </div>
+            </div>
+            <button type="submit">Registre-se</button>
+          </form>
+        </div>
+        <div class="decorative-container">
+          <h2>Olá amigo!</h2>
+          <span>Registre-se e venha
+            <span>compartilhar sua jornada</span> conosco</span>
+          <button class="">Registre-se</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>©GeriatraOnline, 2023❤︎</footer>
+</body>
+
+</html>

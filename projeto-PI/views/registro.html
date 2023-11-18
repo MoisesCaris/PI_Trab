@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <form action="/registromedico" method="post">
+      <label for="login-user-cpf">CPF</label>
+      <input
+        type="text"
+        id="login-user-cpf"
+        placeholder="Digite seu CPF"
+        name="cpf"
+      />
+      <label for="nome">Nome</label>
+      <input type="text" placeholder="Digite Seu Nome" name="nome" />
+      <label for="login-user-password">Senha</label>
+      <input
+        type="password"
+        id="user-password"
+        placeholder="Digite sua senha"
+        name="pass"
+      />
+      <label for="email">Email</label>
+      <input type="text" placeholder="Digite seu Email" name="email" />
+      <label for="crm">CRM</label>
+      <input type="text" placeholder="Digite seu CRM" name="crm" />
+      <label for="especializacao">Especialização</label>
+      <input
+        type="text"
+        placeholder="Digite sua Especialização"
+        name="especializacao"
+      />
+      <label for="horario_de_atendimento_abertura"
+        >Horario de Atendimento abertura</label
+      >
+      <input
+        type="time"
+        placeholder="Coloque seu horario de atendimento"
+        name="horario_de_atendimento_abertura"
+      />
+      <label for="horario_de_atendimento_encerramento"
+        >Horario de Atendimento encerramento</label
+      >
+      <input
+        type="time"
+        placeholder="Coloque seu horario de atendimento"
+        name="horario_de_atendimento_encerramento"
+      />
+      <button type="submit">Entre</button>
+    </form>
+  </body>
+</html>

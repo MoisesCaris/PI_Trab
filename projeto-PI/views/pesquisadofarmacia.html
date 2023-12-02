@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabela de Usuários</title>
+</head>
+
+<body>
+  <h2>Tabela de Usuários</h2>
+  <ul>
+    <% pesquisa_cpf.forEach(receita=> { %>
+      <li>
+        <%= receita.cpf_usuario %>
+      </li>
+      <li>
+        <%= receita.resgatada %>
+          <!-- Adicione uma classe ao botão para identificá-lo -->
+          <% if (receita.resgatada===null) { %>
+            <button class="confirmar-btn" data-receita-id="<%= receita.id_receita %>">Confirmar</button>
+            <% } %>
+      </li>
+      <li>
+        <%= receita.nome_remedio %>
+      </li>
+      <li>
+        <%= receita.id_receita %>
+      </li>
+      <% }); %>
+  </ul>
+
+  <script>
+    // Adicione um evento de clique para todos os botões com a classe "confirmar-btn"
+    document.querySelectorAll('.confirmar-btn').forEach(function (button) {
+      button.addEventListener('click', function () {
+        // Obtém o ID da receita associado ao botão
+        const receitaId = button.getAttribute('data-receita-id');
+        adicionarInput(receitaId);
+      });
+    });
+
+    function adicionarInput(receitaId) {
+      var novoInput = document.createElement("input");
+      novoInput.type = "text";
+      novoInput.id = "valorInput"; // Adicione um ID ao input para identificá-lo
+      var novoBotao = document.createElement("button");
+      novoBotao.innerHTML = "Enviar";
+      novoBotao.onclick = function () {
+        enviarParaAPI(receitaId);
+      };
+      document.body.appendChild(novoInput);
+      document.body.appendChild(novoBotao);
+    }
+
+    function enviarParaAPI(receitaId) {
+      var valorInput = document.getElementById("valorInput").value;
+
+      fetch(`/atualizar/${receitaId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          resgatada: valorInput
+        }),
+      })
+        .then(response => response.json())
+        .then(data => {
+          alert("Resposta da API: " + JSON.stringify(data));
+          window.location.reload();
+        })
+        .catch(error => {
+          console.error('Erro na solicitação PUT:', error);
+        });
+    }
+  </script>
+
+</body>
+
+</html>
